@@ -8,6 +8,6 @@ export const getAllLists = async () => {
 };
 
 export const getListsByTeam = async (team: string) => {
-  const result = await Axios.get(`${BaseURL}/team/${team}`);
+  const result = await Axios.get(`${BaseURL}/team${team}`);
   return result.data;
 };

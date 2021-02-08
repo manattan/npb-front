@@ -9,7 +9,7 @@ const Li = styled.li`
 `;
 
 const searchName = (query: string | undefined) => {
-  console.log(query)
+  console.log(query);
   for (const tmp of list) {
     if (tmp.team === query) {
       return tmp.name;
