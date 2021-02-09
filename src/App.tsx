@@ -4,6 +4,7 @@ import Main from "./components/Main";
 import Team from "./components/Team";
 import Number from "./components/Number";
 import Results from "./components/Results";
+import Keyword from "./components/Keyword";
 import styled from "styled-components";
 
 const Div = styled.div`
@@ -26,6 +27,7 @@ const App: React.FC = () => {
           <Route exact path="/team" component={Team} />
           <Route exact path="/number" component={Number} />
           <Route exact path="/results" component={Results} />
+          <Route exact path="/keyword" component={Keyword} />
         </Switch>
       </Router>
     </>
