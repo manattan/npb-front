@@ -1,10 +1,13 @@
-import Axios from "axios";
-
 const BaseURL = "http://localhost:8000/api";
 
 export const getListsByTeam = async (team: string) => {
-  const result = await Axios.get(`${BaseURL}/team${team}`);
-  return result.data;
+  const results = await fetch(`${BaseURL}/team?team=${team}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+  return results.json();
 };
 
 export const getListsByKey = async (data: { name: string }) => {
@@ -14,6 +17,5 @@ export const getListsByKey = async (data: { name: string }) => {
       "Content-Type": "application/json",
     },
   });
-  console.log(result.ok);
   return result.json();
 };

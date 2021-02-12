@@ -17,7 +17,7 @@ const Main: React.FC = () => {
       console.log(values);
       const result = await getListsByKey(values);
       history.push({
-        pathname: "/keyword",
+        pathname: "/results/keyword",
         state: {
           result,
           name: values.name,
@@ -39,10 +39,10 @@ const Main: React.FC = () => {
 
   return (
     <>
-      <Link to="/team">
+      <Link to="/search/team">
         <Button>チームから検索する</Button>
       </Link>
-      <Link to="/number">
+      <Link to="/search/number">
         <Button>番号から検索する</Button>
       </Link>
       <Formik initialValues={{ name: "" }} onSubmit={submit}>
