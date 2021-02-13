@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Main from "./components/Main";
-import SearchTeam from "./components/Team/Search"
-import ResultsTeam from "./components/Team/Results"
+import SearchTeam from "./components/Team/Search";
+import ResultsTeam from "./components/Team/Results";
 import ResultsKeyword from "./components/Keyword/Results";
 import styled from "styled-components";
 

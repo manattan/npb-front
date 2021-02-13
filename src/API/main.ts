@@ -6,7 +6,7 @@ export const getListsByTeam = async (team: string) => {
     headers: {
       "Content-Type": "application/json",
     },
-  })
+  });
   return results.json();
 };
 
