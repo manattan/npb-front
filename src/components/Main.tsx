@@ -1,68 +1,35 @@
-import React, { useCallback } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React from "react";
+import { Link} from "react-router-dom";
 import {
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  FormErrorMessage,
+  SimpleGrid,
+  Box,
 } from "@chakra-ui/react";
-import { Formik, Form, Field } from "formik";
-import { getListsByKey } from "../API/main";
+import styled from 'styled-components'
+import SearchButton from "./Button";
+import SearchKeyword from "./Keyword/Search"
+
+const KeywordContainer = styled.div`
+  border: 1px solid #777
+`
 
 const Main: React.FC = () => {
-  const history = useHistory();
-  const submit = useCallback(
-    async (values: { name: string }) => {
-      console.log(values);
-      const result = await getListsByKey(values);
-      history.push({
-        pathname: "/results/keyword",
-        state: {
-          result,
-          name: values.name,
-        },
-      });
-    },
-    [history]
-  );
-
-  const validateName = (value: any) => {
-    if (!value) {
-      let error;
-      error = "空欄です";
-      return error;
-    } else {
-      return null;
-    }
-  };
-
   return (
     <>
-      <Link to="/search/team">
-        <Button>チームから検索する</Button>
-      </Link>
-      <Link to="/search/number">
-        <Button>番号から検索する</Button>
-      </Link>
-      <Formik initialValues={{ name: "" }} onSubmit={submit}>
-        {() => (
-          <Form>
-            <Field name="name" validate={validateName}>
-              {({ field, form }: { field: any; form: any }) => (
-                <FormControl isInvalid={form.errors.name && form.touched.name}>
-                  <FormLabel htmlFor="name">キーワード</FormLabel>
-                  <Input {...field} id="name" placeholder="name" />
-                  <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                </FormControl>
-              )}
-            </Field>
-            <Button mt={4} type="submit">
-              検索する
-            </Button>
-          </Form>
-        )}
-      </Formik>
+      <SimpleGrid columns={2} spacing={10}>
+        <Link to="/search/team">
+          <Box style={{ textAlign: "center" }}>
+            <SearchButton label="チーム名から検索する" />
+          </Box>
+        </Link>
+        <Link to="/search/number">
+          <Box style={{ textAlign: "center" }}>
+            <SearchButton label="背番号から検索する" />
+          </Box>
+        </Link>
+      </SimpleGrid>
+      <KeywordContainer>
+        <SearchKeyword />
+      </KeywordContainer>
     </>
   );
 };

@@ -15,6 +15,7 @@ const SearchTeam: React.FC = () => {
 
   const fetch = async (i: number) => {
     const results = await getListsByTeam(list[i].team);
+    console.log(results);
     history.push({
       pathname: "/results/team",
       state: { results, name: list[i].name },
@@ -24,7 +25,7 @@ const SearchTeam: React.FC = () => {
   for (let i = 0; i < list.length; i++) {
     renderList.push(
       <Li key={list[i].team}>
-        <Button onClick={() => fetch(i)}>{list[i].name}</Button>
+        <Button onClick={async () => await fetch(i)}>{list[i].name}</Button>
       </Li>
     );
   }

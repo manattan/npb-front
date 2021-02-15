@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as types from "../../types/main";
 import { list } from "../../lib/main";
+import styled from "styled-components";
 
 type Props = {
   location: {
@@ -12,6 +13,11 @@ type Props = {
     };
   };
 };
+
+const Li = styled.li`
+  list-style: none;
+  margin: 10px auto;
+`;
 
 const ResultsKeyword: React.FC<Props> = (props: Props) => {
   const [data, setData] = useState<Array<JSX.Element> | string>(
@@ -29,11 +35,11 @@ const ResultsKeyword: React.FC<Props> = (props: Props) => {
     const result = [];
     for (const tmp of props.location.state.result.data) {
       result.push(
-        <li key={Math.floor(Math.random() * Math.floor(50000))}>
-          <p>チーム: {getTeam(tmp.teamname)}</p>
+        <Li key={Math.floor(Math.random() * Math.floor(50000))}>
+          <p>{getTeam(tmp.teamname)}</p>
           <p>背番号: {tmp.num}</p>
           <p>{tmp.history}</p>
-        </li>
+        </Li>
       );
     }
 

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Data } from "../../types/main";
@@ -6,7 +5,9 @@ import { Data } from "../../types/main";
 type Props = {
   location: {
     state: {
-      results: Data[];
+      results: {
+        data: Data[];
+      };
       name: string;
     };
   };
@@ -20,20 +21,19 @@ const ResultsTeam: React.FC<Props> = (props: Props) => {
   const [lists, setLists] = useState<Array<JSX.Element> | string>(
     "少々お待ちください..."
   );
-  const results = props.location.state.results;
 
   useEffect(() => {
     const data: Array<JSX.Element> = [];
-    for (let i = 0; i < results.length; i++) {
+    for (const tmp of props.location.state.results.data) {
       data.push(
-        <Li>
-          <p>背番号: {results[i].num}</p>
-          <p>{results[i].history}</p>
+        <Li key={Math.floor(Math.random() * Math.floor(50000))}>
+          <p>背番号: {tmp.num}</p>
+          <p>{tmp.history}</p>
         </Li>
       );
     }
     setLists(data);
-  }, []);
+  }, [props]);
   return (
     <>
       <h1>検索結果: {props.location.state.name}</h1>
