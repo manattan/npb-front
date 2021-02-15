@@ -10,8 +10,8 @@ export const getListsByTeam = async (team: string) => {
   return results.json();
 };
 
-export const getListsByKey = async (data: { name: string }) => {
-  const results = await fetch(`${BaseURL}/keyword?keyword=${data.name}`, {
+export const getListsByKey = async (data: string | undefined) => {
+  const results = await fetch(`${BaseURL}/keyword?keyword=${data}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

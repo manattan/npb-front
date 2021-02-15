@@ -6,7 +6,7 @@ import styled from "styled-components";
 type Props = {
   location: {
     state: {
-      result: {
+      results: {
         data: types.Data[];
       };
       name: string;
@@ -33,7 +33,7 @@ const ResultsKeyword: React.FC<Props> = (props: Props) => {
   };
   useEffect(() => {
     const result = [];
-    for (const tmp of props.location.state.result.data) {
+    for (const tmp of props.location.state.results.data) {
       result.push(
         <Li key={Math.floor(Math.random() * Math.floor(50000))}>
           <p>{getTeam(tmp.teamname)}</p>
@@ -50,7 +50,7 @@ const ResultsKeyword: React.FC<Props> = (props: Props) => {
     <>
       <h1>検索結果</h1>
       <p>キーワード: {props.location.state.name}</p>
-      <p>ヒット数: {props.location.state.result.data.length}件</p>
+      <p>ヒット数: {props.location.state.results.data.length}件</p>
       <ul>{data}</ul>
     </>
   );

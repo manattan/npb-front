@@ -23,10 +23,12 @@ type Props = {
 
 const SearchButton: React.FC<Props> = (props: Props) => {
   return (
-    <ButtonContainer>
-      <p>{props.label}</p>
-    </ButtonContainer>
+    <>
+      <ButtonContainer>
+        <p>{props.label}</p>
+      </ButtonContainer>
+    </>
   );
 };
 
-export default SearchButton;
+export default SearchButton

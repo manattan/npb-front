@@ -1,16 +1,13 @@
 import React from "react";
-import { Link} from "react-router-dom";
-import {
-  SimpleGrid,
-  Box,
-} from "@chakra-ui/react";
-import styled from 'styled-components'
+import { Link } from "react-router-dom";
+import { SimpleGrid, Box } from "@chakra-ui/react";
+import styled from "styled-components";
 import SearchButton from "./Button";
-import SearchKeyword from "./Keyword/Search"
+import SearchKeyword from "./Keyword/Search";
 
 const KeywordContainer = styled.div`
-  border: 1px solid #777
-`
+  padding: 10px;
+`;
 
 const Main: React.FC = () => {
   return (
