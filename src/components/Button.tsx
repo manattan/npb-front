@@ -31,4 +31,4 @@ const SearchButton: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default SearchButton
+export default SearchButton;

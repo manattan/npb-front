@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as types from "../../types/main";
 import { list } from "../../lib/main";
 import styled from "styled-components";
+import SearchKeyword from "./Search";
 
 type Props = {
   location: {
@@ -18,6 +19,10 @@ const Li = styled.li`
   list-style: none;
   margin: 10px auto;
 `;
+
+const KeywordContainer = styled.div`
+  padding:10px;
+`
 
 const ResultsKeyword: React.FC<Props> = (props: Props) => {
   const [data, setData] = useState<Array<JSX.Element> | string>(
@@ -48,6 +53,9 @@ const ResultsKeyword: React.FC<Props> = (props: Props) => {
 
   return (
     <>
+      <KeywordContainer>
+        <SearchKeyword />
+      </KeywordContainer>
       <h1>検索結果</h1>
       <p>キーワード: {props.location.state.name}</p>
       <p>ヒット数: {props.location.state.results.data.length}件</p>
