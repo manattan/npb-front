@@ -21,7 +21,9 @@ const SearchTeam: React.FC = () => {
   for (let i = 0; i < list.length; i++) {
     renderList.push(
       <Box style={{ textAlign: "center" }}>
-        <Button onClick={async () => await fetch(i)} width={400}>{list[i].name}</Button>
+        <Button onClick={async () => await fetch(i)} width={400}>
+          {list[i].name}
+        </Button>
       </Box>
     );
   }
@@ -29,7 +31,7 @@ const SearchTeam: React.FC = () => {
   return (
     <>
       <p>チーム名から検索する</p>
-      <SimpleGrid columns={2} spacing={8} style={{marginTop:'20px'}}>
+      <SimpleGrid columns={2} spacing={8} style={{ marginTop: "20px" }}>
         {renderList}
       </SimpleGrid>
     </>

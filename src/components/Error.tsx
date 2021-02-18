@@ -6,15 +6,15 @@ type Props = {
 };
 
 const P = styled.p`
-    color: red;
-    font-weight: bold;
+  color: red;
+  font-weight: bold;
 `;
 
 const Error: React.FC<Props> = (props: Props) => {
   return (
-      <div style={{padding:'5px 0'}}>
-          <P>{props.message}</P>
-      </div>
+    <div style={{ padding: "5px 0" }}>
+      <P>{props.message}</P>
+    </div>
   );
 };
 

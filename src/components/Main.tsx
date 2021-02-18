@@ -1,18 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { SimpleGrid, Box } from "@chakra-ui/react";
-import styled from "styled-components";
 import SearchButton from "./Button";
 import SearchKeyword from "./Keyword/Search";
-
-const KeywordContainer = styled.div`
-  padding: 10px;
-`;
+import { KeywordContainer } from "./StyledComponent/index";
 
 const Main: React.FC = () => {
   return (
     <>
-      <SimpleGrid columns={2} spacing={10}>
+      <SimpleGrid columns={2} spacing={0}>
         <Link to="/search/team">
           <Box style={{ textAlign: "center" }}>
             <SearchButton label="チーム名から検索する" />

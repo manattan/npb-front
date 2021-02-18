@@ -18,7 +18,7 @@ const KeyButtonContainer = styled.div`
 const KeyButton = styled.div<{ width: number }>`
   height: 100%;
   margin: 10px auto;
-  padding:5px 0;
+  padding: 5px 0;
   width: ${(props) => props.width}px;
   border-radius: 10px;
   background-color: #f5f5f5;

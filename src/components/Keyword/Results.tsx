@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import * as types from "../../types/main";
 import { list } from "../../lib/main";
-import styled from "styled-components";
 import SearchKeyword from "./Search";
+import { KeywordContainer, Li } from "../StyledComponent/index";
 
 type Props = {
   location: {
@@ -14,15 +14,6 @@ type Props = {
     };
   };
 };
-
-const Li = styled.li`
-  list-style: none;
-  margin: 10px auto;
-`;
-
-const KeywordContainer = styled.div`
-  padding:10px;
-`
 
 const ResultsKeyword: React.FC<Props> = (props: Props) => {
   const [data, setData] = useState<Array<JSX.Element> | string>(

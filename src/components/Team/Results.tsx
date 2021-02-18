@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import { Li } from "../StyledComponent/index";
 import { Data } from "../../types/main";
 
 type Props = {
@@ -12,10 +12,6 @@ type Props = {
     };
   };
 };
-
-const Li = styled.li`
-  list-style: none;
-`;
 
 const ResultsTeam: React.FC<Props> = (props: Props) => {
   const [lists, setLists] = useState<Array<JSX.Element> | string>(
