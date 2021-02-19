@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ButtonContainer = styled.div`
   height: 100%;
   width: 80%;
-  padding: 10px 0;
+  padding: auto 0;
   margin: 10px auto;
   font-size: 150%;
   background-color: #f5f5f5;
@@ -20,12 +20,13 @@ const ButtonContainer = styled.div`
 
 type Props = {
   label: string;
-};
+  fuction?:(() => void )
+ };
 
 const SearchButton: React.FC<Props> = (props: Props) => {
   return (
     <>
-      <ButtonContainer>
+      <ButtonContainer onClick={props.fuction}>
         <p>{props.label}</p>
       </ButtonContainer>
     </>

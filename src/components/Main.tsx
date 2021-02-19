@@ -6,7 +6,7 @@ import SearchKeyword from "./Keyword/Search";
 import { KeywordContainer } from "./StyledComponent/index";
 
 const Main: React.FC = () => {
-  return (
+  return ( 
     <>
       <SimpleGrid columns={2} spacing={0}>
         <Link to="/search/team">

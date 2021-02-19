@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import { Button, SimpleGrid, Box } from "@chakra-ui/react";
+import { SimpleGrid, Box } from "@chakra-ui/react";
 import { list } from "../../lib/main";
 import { getListsByTeam } from "../../API/main";
+import SearchButton from "../Button";
 
 const SearchTeam: React.FC = () => {
   const renderList: JSX.Element[] = [];
@@ -20,10 +20,8 @@ const SearchTeam: React.FC = () => {
 
   for (let i = 0; i < list.length; i++) {
     renderList.push(
-      <Box style={{ textAlign: "center" }}>
-        <Button onClick={async () => await fetch(i)} width={400}>
-          {list[i].name}
-        </Button>
+      <Box style={{ textAlign: "center" }} key={i}>
+        <SearchButton label={list[i].name} fuction={async ()=> await fetch(i)} />
       </Box>
     );
   }
