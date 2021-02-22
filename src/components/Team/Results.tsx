@@ -22,7 +22,7 @@ const ResultsTeam: React.FC<Props> = (props: Props) => {
     const data: Array<JSX.Element> = [];
     for (const tmp of props.location.state.results.data) {
       data.push(
-        <Li key={Math.floor(Math.random() * Math.floor(50000))}>
+        <Li key={tmp.id}>
           <p>背番号: {tmp.num}</p>
           <p>{tmp.history}</p>
         </Li>
