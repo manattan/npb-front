@@ -12,3 +12,11 @@ export const list: { team: string; name: string }[] = [
   { team: "D", name: "中日ドラゴンズ" },
   { team: "S", name: "東京ヤクルトスワローズ" },
 ];
+
+export const getTeam = (team: string) => {
+  for (const tmp of list) {
+    if (tmp.team === team) {
+      return tmp.name;
+    }
+  }
+};

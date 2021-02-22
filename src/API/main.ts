@@ -10,6 +10,17 @@ export const getListsByTeam = async (team: string) => {
   return results.json();
 };
 
+export const getListsByNum = async (i: number) => {
+  const results = await fetch(`${BaseURL}/num?num=${i}`,{
+    method: 'GET',
+    headers: {
+      "Content-Type": "application/json",
+    }
+  })
+
+  return results.json()
+}
+
 export const getListsByKey = async (data: string | undefined) => {
   const results = await fetch(`${BaseURL}/keyword?keyword=${data}`, {
     method: "GET",

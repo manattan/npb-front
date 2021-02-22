@@ -21,7 +21,7 @@ const SearchTeam: React.FC = () => {
   for (let i = 0; i < list.length; i++) {
     renderList.push(
       <Box style={{ textAlign: "center" }} key={i}>
-        <SearchButton label={list[i].name} fuction={async ()=> await fetch(i)} />
+        <SearchButton label={list[i].name} function={async ()=> await fetch(i)} />
       </Box>
     );
   }
