@@ -29,7 +29,7 @@ const SearchTeam: React.FC = () => {
   return (
     <>
       <p>チーム名から検索する</p>
-      <SimpleGrid columns={2} spacing={8} style={{ marginTop: "20px" }}>
+      <SimpleGrid columns={2} spacing={6}>
         {renderList}
       </SimpleGrid>
     </>
