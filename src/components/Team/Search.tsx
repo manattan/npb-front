@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { SimpleGrid, Box } from "@chakra-ui/react";
+import { SimpleGrid, Box, Text, Heading} from "@chakra-ui/react";
 import { list } from "../../lib/main";
 import { getListsByTeam } from "../../API/main";
 import SearchButton from "../Button";
@@ -28,7 +28,9 @@ const SearchTeam: React.FC = () => {
 
   return (
     <>
-      <p>チーム名から検索する</p>
+      <div style={{margin: '40px auto', textAlign: 'center'}}>
+        <Heading size="md">チーム名から検索する</Heading>
+      </div>
       <SimpleGrid columns={2} spacing={6}>
         {renderList}
       </SimpleGrid>

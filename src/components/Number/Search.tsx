@@ -1,5 +1,5 @@
 import React from "react";
-import {SimpleGrid, Box} from '@chakra-ui/react'
+import {SimpleGrid, Box, Heading} from '@chakra-ui/react'
 import SearchButton from "../Button";
 import {getListsByNum} from "../../API/main"
 import { useHistory } from "react-router-dom";
@@ -27,7 +27,9 @@ const SearchNumber: React.FC = () => {
 
   return (
     <>
-      <h1>番号で検索する</h1>
+      <div style={{margin: '40px auto', textAlign: 'center'}}>
+        <Heading size="md">番号から検索する</Heading>
+      </div>
       <SimpleGrid columns={10} spacing={4}>{list}</SimpleGrid>
     </>
   );
