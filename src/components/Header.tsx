@@ -11,7 +11,7 @@ const Header: React.FC = () => {
           <Text>NPBの背番号の歴史を調べることができるサイトです</Text>
         </GridItem>
         <GridItem colSpan={1} style={{textAlign: 'right'}}>
-          <Button>マイページ</Button>
+          <Button>ログイン</Button>
         </GridItem>
       </Grid>
     </>

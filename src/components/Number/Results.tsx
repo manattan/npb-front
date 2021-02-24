@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import {Heading} from '@chakra-ui/react'
 import {Li} from '../StyledComponent/index'
 import {getTeam}  from '../../lib/main'
 import * as types from '../../types/main'
@@ -32,7 +33,9 @@ const ResultsNumber: React.FC<Props> = (props:Props) => {
   }, [props]);
   return (
     <>
-      <h1>検索結果</h1>
+      <div style={{margin: '40px auto', textAlign: 'center'}}>
+        <Heading size="md">検索結果</Heading>
+      </div>
       <ul>{data}</ul>
     </>
   );

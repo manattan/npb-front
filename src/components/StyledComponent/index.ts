@@ -10,5 +10,8 @@ export const KeywordContainer = styled.div`
 
 export const Li = styled.li`
   list-style: none;
-  margin: 10px auto;
+  margin: 30px auto;
+  padding: 20px;
+  border: 3px solid #f5f5f5;
+  border-radius: 15px
 `;

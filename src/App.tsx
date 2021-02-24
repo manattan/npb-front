@@ -8,6 +8,7 @@ import ResultsKeyword from "./components/Keyword/Results";
 import styled from "styled-components";
 import SearchNumber from "./components/Number/Search";
 import ResultsNumber from "./components/Number/Results";
+import Footer from "./components/Footer";
 
 const Div = styled.div`
   width: 98%;
@@ -29,6 +30,7 @@ const App: React.FC = () => {
           <Route exact path="/results/number" component={ResultsNumber} />
           <Route exact path="/results/keyword" component={ResultsKeyword} />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

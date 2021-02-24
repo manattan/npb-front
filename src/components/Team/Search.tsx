@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { SimpleGrid, Box, Text, Heading} from "@chakra-ui/react";
+import { SimpleGrid, Box, Heading} from "@chakra-ui/react";
 import { list } from "../../lib/main";
 import { getListsByTeam } from "../../API/main";
 import SearchButton from "../Button";

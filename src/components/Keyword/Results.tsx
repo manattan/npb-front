@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Heading} from '@chakra-ui/react'
 import * as types from "../../types/main";
 import { list } from "../../lib/main";
 import SearchKeyword from "./Search";
@@ -47,9 +48,10 @@ const ResultsKeyword: React.FC<Props> = (props: Props) => {
       <KeywordContainer>
         <SearchKeyword />
       </KeywordContainer>
-      <h1>検索結果</h1>
-      <p>キーワード: {props.location.state.name}</p>
-      <p>ヒット数: {props.location.state.results.data.length}件</p>
+      <div style={{margin: '40px auto', textAlign: 'center'}}>
+        <Heading size="md">検索結果</Heading>
+        <Heading size="xs">キーワード: {props.location.state.name} ヒット数: {props.location.state.results.data.length}件</Heading>
+      </div>
       <ul>{data}</ul>
     </>
   );
