@@ -1,6 +1,10 @@
-export type Data = {
+export interface Data {
   history: string;
   teamname: string;
   num: string;
-  id: string
-};
+  id: string;
+}
+
+// export interface User {
+
+// }
