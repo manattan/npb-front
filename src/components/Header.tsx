@@ -1,16 +1,21 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Heading, Text, GridItem, Grid, Button } from "@chakra-ui/react";
+import { useRecoilState } from "recoil";
 import firebase from "../lib/firebase";
 import { registerUser } from "../API/main";
+import { User } from "../types/main";
+import { userState } from "../store/main";
 
 const Header: React.FC = () => {
   const history = useHistory();
+  const [user, setUser] = useRecoilState(userState);
+
   const login = async () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     const res = await firebase.auth().signInWithPopup(provider);
     console.log(res.user);
-    const userData = {
+    const userData: User = {
       uid: res.user?.uid,
       email: res.user?.email,
       name: res.user?.displayName,
@@ -18,7 +23,7 @@ const Header: React.FC = () => {
     const results = await registerUser(userData);
     console.log(results);
     if (results.ok) {
-      console.log("OK");
+      setUser(userData);
       history.push({ pathname: "/" });
     } else {
       return;
@@ -35,7 +40,8 @@ const Header: React.FC = () => {
           <Text>NPBの背番号の歴史を調べることができるサイトです</Text>
         </GridItem>
         <GridItem colSpan={1} style={{ textAlign: "right" }}>
-          <Button onClick={login}>ログイン</Button>
+          {user.uid !== "" && <p>{user.name}</p>}
+          {user.uid === "" && <Button onClick={login}>ログイン</Button>}
         </GridItem>
       </Grid>
     </>
