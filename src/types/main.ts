@@ -5,6 +5,8 @@ export interface Data {
   id: string;
 }
 
-// export interface User {
-
-// }
+export interface User {
+  uid: string;
+  name: string;
+  email: string;
+}
