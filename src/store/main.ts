@@ -5,3 +5,8 @@ export const userState = atom<types.User | null>({
   key: "user",
   default: null,
 });
+
+export const admin = atom<types.Admin | null>({
+  key: "admin",
+  default: null,
+});

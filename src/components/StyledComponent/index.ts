@@ -13,5 +13,11 @@ export const Li = styled.li`
   margin: 30px auto;
   padding: 20px;
   border: 3px solid #f5f5f5;
-  border-radius: 15px
+  border-radius: 15px;
+`;
+
+export const Div = styled.div`
+  width: 98%;
+  margin: 20px auto;
+  border-bottom: 2px solid #c7c7c7;
 `;

@@ -41,7 +41,7 @@ const SearchKeyword: React.FC = () => {
     setKey("");
   }, []);
 
-  const changeValue = (e: any) => {
+  const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKey(e.target.value);
     setError(undefined);
   };

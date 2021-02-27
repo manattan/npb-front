@@ -10,3 +10,7 @@ export interface User {
   name: string | null | undefined;
   email: string | null | undefined;
 }
+
+export interface Admin {
+  id: string | undefined;
+}

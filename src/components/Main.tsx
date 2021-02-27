@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { SimpleGrid, Box } from "@chakra-ui/react";
+import Header from "./Header";
 import SearchButton from "./Button";
 import SearchKeyword from "./Keyword/Search";
-import { KeywordContainer } from "./StyledComponent/index";
+import { KeywordContainer, Div } from "./StyledComponent/index";
 
 const Main: React.FC = () => {
-  return ( 
+  return (
     <>
+      <Header />
+      <Div />
       <SimpleGrid columns={2} spacing={0}>
         <Link to="/search/team">
           <Box style={{ textAlign: "center" }}>

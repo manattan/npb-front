@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {Heading} from '@chakra-ui/react'
+import { Heading } from "@chakra-ui/react";
 import { Li } from "../StyledComponent/index";
 import { Data } from "../../types/main";
+import Header from "../Header";
+import { Div } from "../StyledComponent/index";
 
 type Props = {
   location: {
@@ -33,7 +35,9 @@ const ResultsTeam: React.FC<Props> = (props: Props) => {
   }, [props]);
   return (
     <>
-      <div style={{margin: '40px auto', textAlign: 'center'}}>
+      <Header />
+      <Div />
+      <div style={{ margin: "40px auto", textAlign: "center" }}>
         <Heading size="md">検索結果: {props.location.state.name}</Heading>
       </div>
       <ul>{lists}</ul>

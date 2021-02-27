@@ -1,8 +1,10 @@
-import React, {useEffect, useState} from "react";
-import {Heading} from '@chakra-ui/react'
-import {Li} from '../StyledComponent/index'
-import {getTeam}  from '../../lib/main'
-import * as types from '../../types/main'
+import React, { useEffect, useState } from "react";
+import { Heading } from "@chakra-ui/react";
+import { Li } from "../StyledComponent/index";
+import { getTeam } from "../../lib/main";
+import * as types from "../../types/main";
+import Header from "../Header";
+import { Div } from "../StyledComponent/index";
 
 type Props = {
   location: {
@@ -13,10 +15,12 @@ type Props = {
       number: number;
     };
   };
-}
+};
 
-const ResultsNumber: React.FC<Props> = (props:Props) => {
-  const [data, setData] = useState<JSX.Element[] | string>('少々お待ちください...')
+const ResultsNumber: React.FC<Props> = (props: Props) => {
+  const [data, setData] = useState<JSX.Element[] | string>(
+    "少々お待ちください..."
+  );
   useEffect(() => {
     const result = [];
     for (const tmp of props.location.state.results.data) {
@@ -33,7 +37,9 @@ const ResultsNumber: React.FC<Props> = (props:Props) => {
   }, [props]);
   return (
     <>
-      <div style={{margin: '40px auto', textAlign: 'center'}}>
+      <Header />
+      <Div />
+      <div style={{ margin: "40px auto", textAlign: "center" }}>
         <Heading size="md">検索結果</Heading>
       </div>
       <ul>{data}</ul>
