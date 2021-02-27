@@ -16,7 +16,6 @@ const App: React.FC = () => {
   const [user, setUser] = useRecoilState(userState);
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
-    setLoading(true);
     if (!user) {
       firebase.auth().onAuthStateChanged((u) => {
         if (u) {

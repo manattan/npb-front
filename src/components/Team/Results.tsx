@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Heading } from "@chakra-ui/react";
+import { Heading, Button } from "@chakra-ui/react";
 import { Li } from "../StyledComponent/index";
 import { Data } from "../../types/main";
 import Header from "../Header";
 import { Div } from "../StyledComponent/index";
+import Lists from "../Lists";
 
 type Props = {
   location: {
@@ -17,22 +18,6 @@ type Props = {
 };
 
 const ResultsTeam: React.FC<Props> = (props: Props) => {
-  const [lists, setLists] = useState<Array<JSX.Element> | string>(
-    "少々お待ちください..."
-  );
-
-  useEffect(() => {
-    const data: Array<JSX.Element> = [];
-    for (const tmp of props.location.state.results.data) {
-      data.push(
-        <Li key={tmp.id}>
-          <p>背番号: {tmp.num}</p>
-          <p>{tmp.history}</p>
-        </Li>
-      );
-    }
-    setLists(data);
-  }, [props]);
   return (
     <>
       <Header />
@@ -40,7 +25,7 @@ const ResultsTeam: React.FC<Props> = (props: Props) => {
       <div style={{ margin: "40px auto", textAlign: "center" }}>
         <Heading size="md">検索結果: {props.location.state.name}</Heading>
       </div>
-      <ul>{lists}</ul>
+      <Lists lists={props.location.state.results.data} />
     </>
   );
 };
