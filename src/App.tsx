@@ -24,12 +24,9 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
     setLoading(true);
-    console.log("effect");
-    if (user.uid === "") {
-      console.log("start");
-      firebase.auth().onAuthStateChanged(async (u) => {
-        console.log(u);
-        await setUser({
+    if (!user) {
+      firebase.auth().onAuthStateChanged((u) => {
+        setUser({
           uid: u?.uid,
           email: u?.email,
           name: u?.displayName,
