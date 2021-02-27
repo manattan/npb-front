@@ -26,11 +26,13 @@ const App: React.FC = () => {
     setLoading(true);
     if (!user) {
       firebase.auth().onAuthStateChanged((u) => {
-        setUser({
-          uid: u?.uid,
-          email: u?.email,
-          name: u?.displayName,
-        });
+        if (u) {
+          setUser({
+            uid: u?.uid,
+            email: u?.email,
+            name: u?.displayName,
+          });
+        }
         setLoading(false);
       });
     }
