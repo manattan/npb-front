@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Heading, Button } from "@chakra-ui/react";
-import { Li } from "../StyledComponent/index";
+import React from "react";
+import { Heading } from "@chakra-ui/react";
 import { Data } from "../../types/main";
 import Header from "../Header";
 import { Div } from "../StyledComponent/index";
