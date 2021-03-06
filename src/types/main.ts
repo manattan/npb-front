@@ -14,3 +14,9 @@ export interface User {
 export interface Admin {
   id: string | undefined;
 }
+
+export interface requestData{
+  id: string
+  prevent: string
+  new: string
+}
