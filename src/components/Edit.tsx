@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom"
 import { useRecoilValue } from "recoil";
 import * as types from "../types/main";
 import { userState } from "../store/main";
@@ -29,6 +30,7 @@ interface Props {
 }
 
 const Edit: React.FC<Props> = (props: Props) => {
+  const history = useHistory()
   const user = useRecoilValue(userState);
   const [reqBody, setReq] = useState<string>(props.location.state.data.history);
 
@@ -45,8 +47,9 @@ const Edit: React.FC<Props> = (props: Props) => {
       );
       if (result.ok) {
         alert("編集リクエストが送信されました");
+        history.push({pathname: '/'})
       } else {
-        console.error(result);
+        alert('サーバーエラーです。info@manattan.jp にお問い合わせください。')
       }
     }
   };

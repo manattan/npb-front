@@ -52,7 +52,7 @@ export const requestEdit = async (data: types.requestData, user: types.User) => 
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(Object.assign(data,user))
+    body: JSON.stringify(Object.assign(data,{uid: user.uid}))
   })
 
   return results
