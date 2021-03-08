@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import Admin from "./components/Admin";
 import Main from "./components/Main";
-import Edit from "./components/Edit"
+import Edit from "./components/Edit";
 import SearchTeam from "./components/Team/Search";
 import ResultsTeam from "./components/Team/Results";
 import ResultsKeyword from "./components/Keyword/Results";

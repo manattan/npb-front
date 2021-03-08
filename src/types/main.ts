@@ -15,8 +15,8 @@ export interface Admin {
   id: string | undefined;
 }
 
-export interface requestData{
-  id: string
-  prevent: string
-  new: string
+export interface requestData {
+  id: string;
+  prevent: string;
+  new: string;
 }

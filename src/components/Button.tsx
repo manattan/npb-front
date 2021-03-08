@@ -20,14 +20,16 @@ const ButtonContainer = styled.div`
 
 type Props = {
   label: string;
-  function?:(() => void )
- };
+  function?: () => void;
+};
 
 const SearchButton: React.FC<Props> = (props: Props) => {
   return (
     <>
       <ButtonContainer onClick={props.function}>
-        <p><span style={{userSelect: 'none'}}>{props.label}</span></p>
+        <p>
+          <span style={{ userSelect: "none" }}>{props.label}</span>
+        </p>
       </ButtonContainer>
     </>
   );

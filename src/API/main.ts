@@ -1,4 +1,4 @@
-import * as types from "../types/main"
+import * as types from "../types/main";
 const BaseURL = "http://localhost:2000/api";
 
 export const getListsByTeam = async (team: string) => {
@@ -46,14 +46,17 @@ export const registerUser = async (data: any) => {
   return results;
 };
 
-export const requestEdit = async (data: types.requestData, user: types.User) => {
+export const requestEdit = async (
+  data: types.requestData,
+  user: types.User
+) => {
   const results = await fetch(`${BaseURL}/editrequest`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(Object.assign(data,{uid: user.uid}))
-  })
+    body: JSON.stringify(Object.assign(data, { uid: user.uid })),
+  });
 
-  return results
-}
+  return results;
+};
