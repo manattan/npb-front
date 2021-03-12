@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Heading, Input, Button, FormLabel } from "@chakra-ui/react";
+import AdminContainer from "./AdminContainer"
 import Error from "./Error";
 
 const Admin: React.FC = () => {
@@ -27,7 +28,7 @@ const Admin: React.FC = () => {
   };
 
   if (isLogin) {
-    return <div />;
+    return <AdminContainer />;
   } else {
     return (
       <div

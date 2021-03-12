@@ -20,3 +20,12 @@ export interface requestData {
   prevent: string;
   new: string;
 }
+
+export interface requestDetail {
+  id: string
+  uid: string
+  dataid: string
+  prevent: string
+  new: string
+  merged: boolean
+}

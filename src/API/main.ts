@@ -60,3 +60,14 @@ export const requestEdit = async (
 
   return results;
 };
+
+export const getRequest = async () => {
+  const results = await fetch(`${BaseURL}/getRequest`, {
+    method:"GET",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+
+  return results
+}
