@@ -36,7 +36,7 @@ const App: React.FC = () => {
     return <div />;
   } else {
     return (
-      <div style={{ padding: "30px" }}>
+      <div style={{ padding: "30px", minHeight: '100vh', position: 'relative' }}>
         <Router>
           <Switch>
             <Route exact path="/" component={Main} />
