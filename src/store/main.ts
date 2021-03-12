@@ -10,3 +10,8 @@ export const admin = atom<types.Admin | null>({
   key: "admin",
   default: null,
 });
+
+export const RequestState = atom<types.requestDetail[] | null>({
+  key: "request",
+  default: null
+});

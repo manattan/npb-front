@@ -1,32 +1,48 @@
 import React, { useState, useEffect } from "react"
 import { getRequest } from "../API/main"
+import { useRecoilState } from "recoil"
+import { RequestState } from '../store/main'
 import * as types from "../types/main"
 
-const AdminContainer = () => {
-  const [req, setReq] = useState<JSX.Element[]>()
+const AdminContainer: React.FC = () => {
+  const [request, setRequest] = useRecoilState(RequestState)
+  const [loading, setLoading] = useState(true)
+  const [list, setList] = useState<Array<JSX.Element>>()
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await getRequest()
       if (result.ok) {
-        const ok = (await result.json()).data
-        const renderList = []
-        for (const tmp of ok) {
-          renderList.push(
-            <li>{tmp}</li>
-          )
-        }
-        console.log(renderList)
-        setReq(renderList)
-        console.log(req)
+        const tmp = (await result.json()).data
+        setRequest(tmp)
       }
     }
     fetchData()
     // eslint-disable-next-line
   }, [])
 
-  return (
+  useEffect(() => {
+    console.log(request)
+    if (request) {
+      const renderList = []
+      for (const tmp of request) {
+        renderList.push(
+          <li>{tmp.dataid}</li>
+        )
+      }
+      setList(renderList)
+      setLoading(false)
+    }
+  }, [request])
+
+  if (loading) {
     <div />
+  }
+
+  return (
+    <div>
+      <ul>{list}</ul>
+    </div>
   )
 }
 
