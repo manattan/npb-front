@@ -27,7 +27,11 @@ const AdminContainer: React.FC = () => {
       const renderList = []
       for (const tmp of request) {
         renderList.push(
-          <li>{tmp.dataid}</li>
+          <li>
+            <p>{tmp.dataid}</p>
+            <p>前: {tmp.prevent}</p>
+            <p>新: {tmp.new}</p>
+          </li>
         )
       }
       setList(renderList)
