@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { getRequest } from "../API/main"
+import { getRequest } from "../../API/main"
 import { useRecoilState } from "recoil"
-import { RequestState } from '../store/main'
-import * as types from "../types/main"
+import { RequestState } from '../../store/main'
 
 const AdminContainer: React.FC = () => {
   const [request, setRequest] = useRecoilState(RequestState)

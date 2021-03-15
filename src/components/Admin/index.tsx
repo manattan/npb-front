@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Heading, Input, Button, FormLabel } from "@chakra-ui/react";
-import AdminContainer from "./AdminContainer"
-import Error from "./Error";
+import AdminContainer from "./Container"
+import Error from "../Error";
 
 const Admin: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);

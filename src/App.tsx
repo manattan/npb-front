@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import Admin from "./components/Admin";
+import Admin from "./components/Admin/index";
 import Main from "./components/Main";
 import Edit from "./components/Edit";
 import SearchTeam from "./components/Team/Search";
