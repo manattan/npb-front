@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { getRequest } from "../../API/main"
 import { useRecoilState } from "recoil"
+import ListElement from "./List"
+import { getRequest } from "../../API/main"
 import { RequestState } from '../../store/main'
 
 const AdminContainer: React.FC = () => {
@@ -26,11 +27,7 @@ const AdminContainer: React.FC = () => {
       const renderList = []
       for (const tmp of request) {
         renderList.push(
-          <li>
-            <p>{tmp.dataid}</p>
-            <p>前: {tmp.prevent}</p>
-            <p>新: {tmp.new}</p>
-          </li>
+          <ListElement data={tmp}/>
         )
       }
       setList(renderList)

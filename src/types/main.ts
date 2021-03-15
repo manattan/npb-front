@@ -15,13 +15,13 @@ export interface Admin {
   id: string | undefined;
 }
 
-export interface requestData {
+export interface RequestData {
   id: string;
   prevent: string;
   new: string;
 }
 
-export interface requestDetail {
+export interface RequestDetail {
   id: string
   uid: string
   dataid: string

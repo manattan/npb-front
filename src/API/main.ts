@@ -47,7 +47,7 @@ export const registerUser = async (data: any) => {
 };
 
 export const requestEdit = async (
-  data: types.requestData,
+  data: types.RequestData,
   user: types.User
 ) => {
   const results = await fetch(`${BaseURL}/editrequest`, {
