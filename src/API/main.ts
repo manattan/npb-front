@@ -78,7 +78,8 @@ export const mergeRequest = async (id: {id: string}) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
-    }
+    },
+    body: JSON.stringify({id: id.id}),
   })
 
   console.log(results)
