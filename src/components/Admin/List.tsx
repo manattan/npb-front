@@ -1,11 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import * as Types from '../../types/main'
-
-const ListContainer = styled.div`
-  border: 2px solid orange;
-  width: 80%;
-`
+import { Tr, Td, Button } from '@chakra-ui/react'
 
 interface Props {
   data: Types.RequestDetail
@@ -13,9 +8,21 @@ interface Props {
 
 const ListElement:React.FC<Props> = (props: Props) => {
   return (
-    <ListContainer>
-      <p>{props.data.dataid}</p>
-    </ListContainer>
+      <Tr>
+        <Td><p>データID: {props.data.dataid}<br/> ユーザーID: {props.data.uid}</p></Td>
+        <Td>{props.data.prevent}</Td>
+        <Td>{props.data.new}</Td>
+        <Td>
+          <section style={{textAlign: 'center'}}>
+            <div style={{margin: '5px 0'}}>
+              <Button colorScheme="orange" borderColor="orange.700">マージ</Button>
+            </div>
+            <div style={{margin: '5px 0'}}>
+              <Button>却下</Button>
+            </div>
+          </section>
+        </Td>
+      </Tr>
   )
 }
 

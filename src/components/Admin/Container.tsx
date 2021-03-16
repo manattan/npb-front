@@ -3,6 +3,13 @@ import { useRecoilState } from "recoil"
 import ListElement from "./List"
 import { getRequest } from "../../API/main"
 import { RequestState } from '../../store/main'
+import { Table, Tbody, Thead, Tr, Td, Heading} from "@chakra-ui/react"
+import styled from "styled-components"
+
+const Div = styled.div`
+  padding: 10px;
+  max-width: 100%;
+`
 
 const AdminContainer: React.FC = () => {
   const [request, setRequest] = useRecoilState(RequestState)
@@ -40,9 +47,22 @@ const AdminContainer: React.FC = () => {
   }
 
   return (
-    <div>
-      <ul>{list}</ul>
-    </div>
+    <Div>
+    <Heading>管理画面</Heading>
+    <Table variant="striped" colorScheme="twitter">
+      <Thead>
+        <Tr>
+          <Td>詳細</Td>
+          <Td>変更前</Td>
+          <Td>変更後</Td>
+          <Td>オプション</Td>
+        </Tr>
+      </Thead>
+      <Tbody>
+        {list}
+      </Tbody>
+    </Table>
+    </Div>
   )
 }
 
