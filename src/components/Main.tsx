@@ -4,7 +4,7 @@ import { SimpleGrid, Box } from "@chakra-ui/react";
 import Header from "./Header";
 import SearchButton from "./Button";
 import SearchKeyword from "./Keyword/Search";
-import { KeywordContainer, Div} from "./StyledComponent/index";
+import { KeywordContainer, Div } from "./StyledComponent/index";
 
 const Main: React.FC = () => {
   return (

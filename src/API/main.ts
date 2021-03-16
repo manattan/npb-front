@@ -63,25 +63,25 @@ export const requestEdit = async (
 
 export const getRequest = async () => {
   const results = await fetch(`${BaseURL}/getRequest`, {
-    method:"GET",
+    method: "GET",
     headers: {
-      "Content-Type": "application/json"
-    }
-  })
+      "Content-Type": "application/json",
+    },
+  });
 
-  return results
-}
+  return results;
+};
 
-export const mergeRequest = async (id: {id: string}) => {
-  console.log("id: ", id )
+export const mergeRequest = async (id: { id: string }) => {
+  console.log("id: ", id);
   const results = await fetch(`${BaseURL}/mergeRequest`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({id: id.id}),
-  })
+    body: JSON.stringify({ id: id.id }),
+  });
 
-  console.log(results)
-  return results
-}
+  console.log(results);
+  return results;
+};

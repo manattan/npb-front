@@ -22,10 +22,10 @@ export interface RequestData {
 }
 
 export interface RequestDetail {
-  id: string
-  uid: string
-  dataid: string
-  prevent: string
-  new: string
-  merged: boolean
+  id: string;
+  uid: string;
+  dataid: string;
+  prevent: string;
+  new: string;
+  merged: boolean;
 }

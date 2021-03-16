@@ -13,5 +13,5 @@ export const admin = atom<types.Admin | null>({
 
 export const RequestState = atom<types.RequestDetail[] | null>({
   key: "request",
-  default: null
+  default: null,
 });

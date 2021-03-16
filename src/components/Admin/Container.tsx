@@ -1,69 +1,65 @@
-import React, { useState, useEffect } from "react"
-import { useRecoilState } from "recoil"
-import ListElement from "./List"
-import { getRequest } from "../../API/main"
-import { RequestState } from '../../store/main'
-import { Table, Tbody, Thead, Tr, Td, Heading} from "@chakra-ui/react"
-import styled from "styled-components"
+import React, { useState, useEffect } from "react";
+import { useRecoilState } from "recoil";
+import ListElement from "./List";
+import { getRequest } from "../../API/main";
+import { RequestState } from "../../store/main";
+import { Table, Tbody, Thead, Tr, Td, Heading } from "@chakra-ui/react";
+import styled from "styled-components";
 
 const Div = styled.div`
   padding: 10px;
   max-width: 100%;
-`
+`;
 
 const AdminContainer: React.FC = () => {
-  const [request, setRequest] = useRecoilState(RequestState)
-  const [loading, setLoading] = useState(true)
-  const [list, setList] = useState<Array<JSX.Element>>()
+  const [request, setRequest] = useRecoilState(RequestState);
+  const [loading, setLoading] = useState(true);
+  const [list, setList] = useState<Array<JSX.Element>>();
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getRequest()
+      const result = await getRequest();
       if (result.ok) {
-        const tmp = (await result.json()).data
-        setRequest(tmp)
+        const tmp = (await result.json()).data;
+        setRequest(tmp);
       }
-    }
-    fetchData()
+    };
+    fetchData();
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   useEffect(() => {
-    console.log(request)
+    console.log(request);
     if (request) {
-      const renderList = []
+      const renderList = [];
       for (const tmp of request) {
-        renderList.push(
-          <ListElement data={tmp}/>
-        )
+        renderList.push(<ListElement data={tmp} />);
       }
-      setList(renderList)
-      setLoading(false)
+      setList(renderList);
+      setLoading(false);
     }
-  }, [request])
+  }, [request]);
 
   if (loading) {
-    <div />
+    <div />;
   }
 
   return (
     <Div>
-    <Heading>管理画面</Heading>
-    <Table variant="striped" colorScheme="twitter">
-      <Thead>
-        <Tr>
-          <Td>詳細</Td>
-          <Td>変更前</Td>
-          <Td>変更後</Td>
-          <Td>オプション</Td>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {list}
-      </Tbody>
-    </Table>
+      <Heading>管理画面</Heading>
+      <Table variant="striped" colorScheme="twitter">
+        <Thead>
+          <Tr>
+            <Td>詳細</Td>
+            <Td>変更前</Td>
+            <Td>変更後</Td>
+            <Td>オプション</Td>
+          </Tr>
+        </Thead>
+        <Tbody>{list}</Tbody>
+      </Table>
     </Div>
-  )
-}
+  );
+};
 
-export default AdminContainer
+export default AdminContainer;

@@ -37,7 +37,7 @@ const SearchNumber: React.FC = () => {
       <div style={{ margin: "40px auto", textAlign: "center" }}>
         <Heading size="md">番号から検索する</Heading>
       </div>
-      <div style={{ marginBottom: '30px' }}>
+      <div style={{ marginBottom: "30px" }}>
         <SimpleGrid columns={10} spacing={4}>
           {list}
         </SimpleGrid>

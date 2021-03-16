@@ -1,41 +1,51 @@
-import React from 'react'
-import * as Types from '../../types/main'
-import { Tr, Td, Button } from '@chakra-ui/react'
-import { mergeRequest } from '../../API/main'
+import React from "react";
+import * as Types from "../../types/main";
+import { Tr, Td, Button } from "@chakra-ui/react";
+import { mergeRequest } from "../../API/main";
 
 interface Props {
-  data: Types.RequestDetail
+  data: Types.RequestDetail;
 }
 
-const ListElement:React.FC<Props> = (props: Props) => {
-
+const ListElement: React.FC<Props> = (props: Props) => {
   const merge = async () => {
     // eslint-disable-next-line
-    if (confirm('本当ににmergeしますか?')) {
-      const result = await mergeRequest({id: props.data.id})
+    if (confirm("本当ににmergeしますか?")) {
+      const result = await mergeRequest({ id: props.data.id });
       if (result.ok) {
-        alert('正常にmergeされました')
+        alert("正常にmergeされました");
       }
     }
-  }
+  };
 
   return (
-      <Tr>
-        <Td><p>データID: {props.data.dataid}<br/> ユーザーID: {props.data.uid}</p></Td>
-        <Td>{props.data.prevent}</Td>
-        <Td>{props.data.new}</Td>
-        <Td>
-          <section style={{textAlign: 'center'}}>
-            <div style={{margin: '5px 0'}}>
-              <Button colorScheme="orange" borderColor="orange.700" onClick={merge}>マージ</Button>
-            </div>
-            <div style={{margin: '5px 0'}}>
-              <Button>却下</Button>
-            </div>
-          </section>
-        </Td>
-      </Tr>
-  )
-}
+    <Tr>
+      <Td>
+        <p>
+          データID: {props.data.dataid}
+          <br /> ユーザーID: {props.data.uid}
+        </p>
+      </Td>
+      <Td>{props.data.prevent}</Td>
+      <Td>{props.data.new}</Td>
+      <Td>
+        <section style={{ textAlign: "center" }}>
+          <div style={{ margin: "5px 0" }}>
+            <Button
+              colorScheme="orange"
+              borderColor="orange.700"
+              onClick={merge}
+            >
+              マージ
+            </Button>
+          </div>
+          <div style={{ margin: "5px 0" }}>
+            <Button>却下</Button>
+          </div>
+        </section>
+      </Td>
+    </Tr>
+  );
+};
 
-export default ListElement
+export default ListElement;

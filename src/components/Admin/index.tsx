@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Heading, Input, Button, FormLabel } from "@chakra-ui/react";
-import AdminContainer from "./Container"
+import AdminContainer from "./Container";
 import Error from "../Error";
 
 const Admin: React.FC = () => {
