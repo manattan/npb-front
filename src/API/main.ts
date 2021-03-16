@@ -71,3 +71,16 @@ export const getRequest = async () => {
 
   return results
 }
+
+export const mergeRequest = async (id: {id: string}) => {
+  console.log("id: ", id )
+  const results = await fetch(`${BaseURL}/mergeRequest`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+
+  console.log(results)
+  return results
+}
