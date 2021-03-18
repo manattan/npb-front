@@ -1,7 +1,7 @@
 import React from "react";
 import * as Types from "../../types/main";
 import { Tr, Td, Button } from "@chakra-ui/react";
-import { mergeRequest } from "../../API/main";
+import { mergeRequest, rejectRequest } from "../../API/main";
 
 interface Props {
   data: Types.RequestDetail;
@@ -17,6 +17,16 @@ const ListElement: React.FC<Props> = (props: Props) => {
       }
     }
   };
+
+  const reject = async () => {
+    // eslint-disable-next-line
+    if (confirm('本当にrejectしますか?')) {
+      const result = await rejectRequest({id: props.data.dataid})
+      if (result.ok) {
+        alert("正常にrejectされました")
+      }
+    }
+  }
 
   return (
     <Tr>
@@ -40,7 +50,7 @@ const ListElement: React.FC<Props> = (props: Props) => {
             </Button>
           </div>
           <div style={{ margin: "5px 0" }}>
-            <Button>却下</Button>
+            <Button onClick={reject}>却下</Button>
           </div>
         </section>
       </Td>
