@@ -25,8 +25,10 @@ const App: React.FC = () => {
             email: u?.email,
             name: u?.displayName,
           });
+          setLoading(false)
+        } else {
+          setLoading(false);
         }
-        setLoading(false);
       });
     }
     // eslint-disable-next-line
