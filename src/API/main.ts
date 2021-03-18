@@ -86,16 +86,16 @@ export const mergeRequest = async (id: { id: string }) => {
   return results;
 };
 
-export const rejectRequest = async (id: {id: string}) => {
-  console.log('dataid: ', id)
+export const rejectRequest = async (id: { id: string }) => {
+  console.log("dataid: ", id);
   const results = await fetch(`${BaseURL}/rejectRequest`, {
     method: "POST",
     headers: {
-      "Content-Type" : "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({id: id.id})
-  })
+    body: JSON.stringify({ id: id.id }),
+  });
 
-  console.log(results)
-  return results
-}
+  console.log(results);
+  return results;
+};

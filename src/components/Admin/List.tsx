@@ -20,13 +20,13 @@ const ListElement: React.FC<Props> = (props: Props) => {
 
   const reject = async () => {
     // eslint-disable-next-line
-    if (confirm('本当にrejectしますか?')) {
-      const result = await rejectRequest({id: props.data.dataid})
+    if (confirm("本当にrejectしますか?")) {
+      const result = await rejectRequest({ id: props.data.dataid });
       if (result.ok) {
-        alert("正常にrejectされました")
+        alert("正常にrejectされました");
       }
     }
-  }
+  };
 
   return (
     <Tr>

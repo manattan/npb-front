@@ -25,7 +25,7 @@ const App: React.FC = () => {
             email: u?.email,
             name: u?.displayName,
           });
-          setLoading(false)
+          setLoading(false);
         } else {
           setLoading(false);
         }
