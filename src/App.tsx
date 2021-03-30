@@ -10,6 +10,7 @@ import ResultsKeyword from "./components/Keyword/Results";
 import SearchNumber from "./components/Number/Search";
 import ResultsNumber from "./components/Number/Results";
 import Footer from "./components/Footer";
+import NotFound from "./components/NotFound";
 import { userState } from "./store/main";
 import firebase from "./lib/firebase";
 
@@ -51,6 +52,7 @@ const App: React.FC = () => {
             <Route exact path="/results/team" component={ResultsTeam} />
             <Route exact path="/results/number" component={ResultsNumber} />
             <Route exact path="/results/keyword" component={ResultsKeyword} />
+            <Route component={NotFound}/>
           </Switch>
           <Footer />
         </Router>
