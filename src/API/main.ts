@@ -1,5 +1,5 @@
 import * as types from "../types/main";
-const BaseURL = "http://localhost:2000/api";
+const BaseURL = "https://tweet-npb.herokuapp.com/api";
 
 export const getListsByTeam = async (team: string) => {
   const results = await fetch(`${BaseURL}/team?team=${team}`, {
