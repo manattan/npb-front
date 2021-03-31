@@ -40,7 +40,14 @@ const Header: React.FC = () => {
           <Text>NPBの背番号の歴史を調べることができるサイトです</Text>
         </GridItem>
         <GridItem colSpan={1} style={{ textAlign: "right" }}>
-          {user && <p>{user.name}</p>}
+          {user && (
+            <>
+              <p>{user.name}</p>
+              {user.name === '茂木貴紀' && (
+                <Button onClick={() => history.push('/admin')}>管理画面</Button>
+              )}
+            </>
+          )}
           {!user && <Button onClick={login}>ログイン</Button>}
         </GridItem>
       </Grid>
