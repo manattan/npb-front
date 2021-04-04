@@ -1,20 +1,19 @@
-import React from 'react'
-import Header from './Header'
-import { Heading, Text } from '@chakra-ui/react'
-import { Div } from './StyledComponent'
+import React from "react";
+import Header from "./Header";
+import { Heading, Text } from "@chakra-ui/react";
+import { Div } from "./StyledComponent";
 
-const NotFound:React.FC = () => {
+const NotFound: React.FC = () => {
   return (
     <div>
       <Header />
       <Div />
-      <span style={{textAlign: 'center'}}>
+      <span style={{ textAlign: "center" }}>
         <Heading>404 not Found</Heading>
         <Text>このURLは存在しません！</Text>
       </span>
     </div>
-  )
-}
+  );
+};
 
-export default NotFound
-
+export default NotFound;

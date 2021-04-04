@@ -32,7 +32,7 @@ const KeyButton = styled.div<{ width: number }>`
 `;
 
 interface Props {
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const SearchKeyword: React.FC<Props> = (props: Props) => {
@@ -51,14 +51,14 @@ const SearchKeyword: React.FC<Props> = (props: Props) => {
       setError("キーワードを入力してください");
       return;
     }
-    props.setLoading(true)
+    props.setLoading(true);
     const results = await getListsByKey(key);
     console.log(results);
     history.push({
       pathname: "/results/keyword",
       state: { results, name: key },
     });
-    props.setLoading(false)
+    props.setLoading(false);
   };
 
   return (

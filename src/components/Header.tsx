@@ -43,8 +43,8 @@ const Header: React.FC = () => {
           {user && (
             <>
               <p>{user.name}</p>
-              {user.name === '茂木貴紀' && (
-                <Button onClick={() => history.push('/admin')}>管理画面</Button>
+              {user.name === "茂木貴紀" && (
+                <Button onClick={() => history.push("/admin")}>管理画面</Button>
               )}
             </>
           )}

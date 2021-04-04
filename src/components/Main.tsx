@@ -7,7 +7,7 @@ import SearchKeyword from "./Keyword/Search";
 import { KeywordContainer, Div } from "./StyledComponent/index";
 
 interface Props {
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Main: React.FC<Props> = (props: Props) => {

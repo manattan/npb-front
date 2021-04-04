@@ -19,7 +19,7 @@ import { AppContainer, MainContainer } from "./components/StyledComponent";
 const App: React.FC = () => {
   const [user, setUser] = useRecoilState(userState);
   const [loading, setLoading] = useState<boolean>(true);
-  const [loadingChildren, setLoadingChildren] = useState<boolean>(false)
+  const [loadingChildren, setLoadingChildren] = useState<boolean>(false);
 
   useEffect(() => {
     if (!user) {
@@ -47,15 +47,29 @@ const App: React.FC = () => {
         <MainContainer isLoading={loadingChildren}>
           <Router>
             <Switch>
-              <Route exact path="/" component={() => <Main setLoading={setLoadingChildren} />} />
+              <Route
+                exact
+                path="/"
+                component={() => <Main setLoading={setLoadingChildren} />}
+              />
               <Route exact path="/edit" component={Edit} />
               <Route exact path="/admin" component={Admin} />
-              <Route exact path="/search/team" component={() => <SearchTeam setLoading={setLoadingChildren} />} />
-              <Route exact path="/search/number" component={() => <SearchNumber setLoading={setLoadingChildren} />} />
+              <Route
+                exact
+                path="/search/team"
+                component={() => <SearchTeam setLoading={setLoadingChildren} />}
+              />
+              <Route
+                exact
+                path="/search/number"
+                component={() => (
+                  <SearchNumber setLoading={setLoadingChildren} />
+                )}
+              />
               <Route exact path="/results/team" component={ResultsTeam} />
               <Route exact path="/results/number" component={ResultsNumber} />
               <Route exact path="/results/keyword" component={ResultsKeyword} />
-              <Route component={NotFound}/>
+              <Route component={NotFound} />
             </Switch>
             <Footer />
           </Router>
