@@ -6,7 +6,11 @@ import SearchButton from "./Button";
 import SearchKeyword from "./Keyword/Search";
 import { KeywordContainer, Div } from "./StyledComponent/index";
 
-const Main: React.FC = () => {
+interface Props {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const Main: React.FC<Props> = (props: Props) => {
   return (
     <>
       <Header />
@@ -24,7 +28,7 @@ const Main: React.FC = () => {
         </Link>
       </SimpleGrid>
       <KeywordContainer>
-        <SearchKeyword />
+        <SearchKeyword setLoading={props.setLoading} />
       </KeywordContainer>
     </>
   );
