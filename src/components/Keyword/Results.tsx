@@ -1,12 +1,9 @@
 import React from "react";
 import { Heading } from "@chakra-ui/react";
 import * as types from "../../types/main";
-import SearchKeyword from "./Search";
-import { KeywordContainer } from "../StyledComponent/index";
 import Header from "../Header";
 import { Div } from "../StyledComponent/index";
 import Lists from "../Lists";
-import { useHistory } from "react-router-dom";
 
 type Props = {
   location: {
