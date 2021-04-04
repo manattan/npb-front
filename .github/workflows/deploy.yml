@@ -15,5 +15,7 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
+      - name: install firebase-tool
+        run: yarn add --dev firebase-tools
       - name: Deploy to Firebase
-        run: yarn deploy --token=${{ env.FIREBASE_DEPLOY_KEY }}
+        run: ./node_modules/.bin/firebase deploy --token=${{ secrets.FIREBASE_DEPLOY_KEY }}
