@@ -11,6 +11,7 @@ const ListElement: React.FC<Props> = (props: Props) => {
   const merge = async () => {
     // eslint-disable-next-line
     if (confirm("本当ににmergeしますか?")) {
+      console.log({ id: props.data.id })
       const result = await mergeRequest({ id: props.data.id });
       if (result.ok) {
         alert("正常にmergeされました");
