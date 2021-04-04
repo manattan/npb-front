@@ -7,17 +7,22 @@ import Header from "../Header";
 import SearchButton from "../Button";
 import { Div } from "../StyledComponent/index";
 
-const SearchTeam: React.FC = () => {
+interface Props {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const SearchTeam: React.FC<Props> = (props:Props) => {
   const renderList: JSX.Element[] = [];
   const history = useHistory();
 
   const fetch = async (i: number) => {
+    props.setLoading(true)
     const results = await getListsByTeam(list[i].team);
-    console.log(results);
     history.push({
       pathname: "/results/team",
       state: { results, name: list[i].name },
     });
+    props.setLoading(false)
   };
 
   for (let i = 0; i < list.length; i++) {

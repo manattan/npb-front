@@ -21,3 +21,20 @@ export const Div = styled.div`
   margin: 20px auto;
   border-bottom: 2px solid #c7c7c7;
 `;
+
+export const LoadingContainer = styled.div`
+  position: absolute;
+  top: calc(50vh - 100px);
+  left: calc(50% - 50px);
+`
+
+export const AppContainer = styled.div`
+  position: relative;
+`
+
+export const MainContainer = styled.div<{ isLoading: boolean}>`
+  filter: ${props => props.isLoading ? 'blur(3px)' : 0};
+  padding: 30px;
+  min-height: 100vh;  
+  position: relative;
+`

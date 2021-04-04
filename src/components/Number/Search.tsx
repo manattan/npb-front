@@ -6,16 +6,22 @@ import Header from "../Header";
 import { getListsByNum } from "../../API/main";
 import { Div } from "../StyledComponent/index";
 
-const SearchNumber: React.FC = () => {
+interface Props {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const SearchNumber: React.FC<Props> = (props: Props) => {
   const history = useHistory();
 
   const fetch = async (i: number) => {
+    props.setLoading(true)
     const results = await getListsByNum(i);
     console.log(results);
     history.push({
       pathname: "/results/number",
       state: { results, number: i },
     });
+    props.setLoading(false)
   };
 
   const list = [];

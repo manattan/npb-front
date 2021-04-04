@@ -13,10 +13,14 @@ import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import { userState } from "./store/main";
 import firebase from "./lib/firebase";
+import Loading from "./components/Loading";
+import { AppContainer, MainContainer } from "./components/StyledComponent";
 
 const App: React.FC = () => {
   const [user, setUser] = useRecoilState(userState);
   const [loading, setLoading] = useState<boolean>(true);
+  const [loadingChildren, setLoadingChildren] = useState<boolean>(false)
+
   useEffect(() => {
     if (!user) {
       firebase.auth().onAuthStateChanged((u) => {
@@ -39,24 +43,25 @@ const App: React.FC = () => {
     return <div />;
   } else {
     return (
-      <div
-        style={{ padding: "30px", minHeight: "100vh", position: "relative" }}
-      >
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Main} />
-            <Route exact path="/edit" component={Edit} />
-            <Route exact path="/admin" component={Admin} />
-            <Route exact path="/search/team" component={SearchTeam} />
-            <Route exact path="/search/number" component={SearchNumber} />
-            <Route exact path="/results/team" component={ResultsTeam} />
-            <Route exact path="/results/number" component={ResultsNumber} />
-            <Route exact path="/results/keyword" component={ResultsKeyword} />
-            <Route component={NotFound}/>
-          </Switch>
-          <Footer />
-        </Router>
-      </div>
+      <AppContainer>
+        <MainContainer isLoading={loadingChildren}>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Main} />
+              <Route exact path="/edit" component={Edit} />
+              <Route exact path="/admin" component={Admin} />
+              <Route exact path="/search/team" component={() => <SearchTeam setLoading={setLoadingChildren} />} />
+              <Route exact path="/search/number" component={() => <SearchNumber setLoading={setLoadingChildren} />} />
+              <Route exact path="/results/team" component={ResultsTeam} />
+              <Route exact path="/results/number" component={ResultsNumber} />
+              <Route exact path="/results/keyword" component={ResultsKeyword} />
+              <Route component={NotFound}/>
+            </Switch>
+            <Footer />
+          </Router>
+        </MainContainer>
+        <Loading isLoading={loadingChildren} />
+      </AppContainer>
     );
   }
 };
