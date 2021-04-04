@@ -11,7 +11,7 @@ const ListElement: React.FC<Props> = (props: Props) => {
   const merge = async () => {
     // eslint-disable-next-line
     if (confirm("本当ににmergeしますか?")) {
-      const result = await mergeRequest({ id: props.data.dataid });
+      const result = await mergeRequest({ id: props.data.id });
       if (result.ok) {
         alert("正常にmergeされました");
       }
@@ -21,7 +21,7 @@ const ListElement: React.FC<Props> = (props: Props) => {
   const reject = async () => {
     // eslint-disable-next-line
     if (confirm("本当にrejectしますか?")) {
-      const result = await rejectRequest({ id: props.data.dataid });
+      const result = await rejectRequest({ id: props.data.id });
       if (result.ok) {
         alert("正常にrejectされました");
       }
