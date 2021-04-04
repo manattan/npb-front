@@ -47,7 +47,7 @@ const App: React.FC = () => {
         <MainContainer isLoading={loadingChildren}>
           <Router>
             <Switch>
-              <Route exact path="/" component={Main} />
+              <Route exact path="/" component={() => <Main setLoading={setLoadingChildren} />} />
               <Route exact path="/edit" component={Edit} />
               <Route exact path="/admin" component={Admin} />
               <Route exact path="/search/team" component={() => <SearchTeam setLoading={setLoadingChildren} />} />

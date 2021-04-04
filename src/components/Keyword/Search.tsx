@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   FormControl,
   FormLabel,
@@ -31,31 +31,34 @@ const KeyButton = styled.div<{ width: number }>`
   }
 `;
 
-const SearchKeyword: React.FC = () => {
+interface Props {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const SearchKeyword: React.FC<Props> = (props: Props) => {
   const [key, setKey] = useState<string | undefined>("");
   const [error, setError] = useState<string | undefined>(undefined);
   const history = useHistory();
   const width = window.innerWidth;
 
-  useEffect(() => {
-    setKey("");
-  }, []);
-
   const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKey(e.target.value);
     setError(undefined);
   };
+
   const usePost = async () => {
     if (!key) {
       setError("キーワードを入力してください");
       return;
     }
+    props.setLoading(true)
     const results = await getListsByKey(key);
     console.log(results);
     history.push({
       pathname: "/results/keyword",
       state: { results, name: key },
     });
+    props.setLoading(false)
   };
 
   return (
