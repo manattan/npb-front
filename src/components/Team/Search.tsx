@@ -9,6 +9,7 @@ import { Div } from "../StyledComponent/index";
 
 interface Props {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setText: React.Dispatch<React.SetStateAction<undefined | string>>
 }
 
 const SearchTeam: React.FC<Props> = (props: Props) => {
@@ -16,6 +17,7 @@ const SearchTeam: React.FC<Props> = (props: Props) => {
   const history = useHistory();
 
   const fetch = async (i: number) => {
+    props.setText(`チーム: ${list[i].name}`)
     props.setLoading(true);
     const results = await getListsByTeam(list[i].team);
     history.push({

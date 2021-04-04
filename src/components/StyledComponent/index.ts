@@ -28,6 +28,12 @@ export const LoadingContainer = styled.div`
   left: calc(50% - 50px);
 `;
 
+export const LoadingText = styled.div<{length?: number}>`
+  position: absolute;
+  top: 50vh;
+  left: calc(50% - ${props => props.length ? props.length/2 : 0}rem);
+`
+
 export const AppContainer = styled.div`
   position: relative;
 `;

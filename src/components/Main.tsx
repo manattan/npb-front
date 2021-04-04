@@ -8,6 +8,7 @@ import { KeywordContainer, Div } from "./StyledComponent/index";
 
 interface Props {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setText: React.Dispatch<React.SetStateAction<undefined | string>>
 }
 
 const Main: React.FC<Props> = (props: Props) => {
@@ -28,7 +29,7 @@ const Main: React.FC<Props> = (props: Props) => {
         </Link>
       </SimpleGrid>
       <KeywordContainer>
-        <SearchKeyword setLoading={props.setLoading} />
+        <SearchKeyword setLoading={props.setLoading} setText={props.setText}/>
       </KeywordContainer>
     </>
   );

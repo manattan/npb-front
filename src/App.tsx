@@ -20,6 +20,7 @@ const App: React.FC = () => {
   const [user, setUser] = useRecoilState(userState);
   const [loading, setLoading] = useState<boolean>(true);
   const [loadingChildren, setLoadingChildren] = useState<boolean>(false);
+  const [loadingText, setText] = useState<undefined | string>()
 
   useEffect(() => {
     if (!user) {
@@ -50,20 +51,20 @@ const App: React.FC = () => {
               <Route
                 exact
                 path="/"
-                component={() => <Main setLoading={setLoadingChildren} />}
+                component={() => <Main setLoading={setLoadingChildren} setText={setText} />}
               />
               <Route exact path="/edit" component={Edit} />
               <Route exact path="/admin" component={Admin} />
               <Route
                 exact
                 path="/search/team"
-                component={() => <SearchTeam setLoading={setLoadingChildren} />}
+                component={() => <SearchTeam setLoading={setLoadingChildren} setText={setText} />}
               />
               <Route
                 exact
                 path="/search/number"
                 component={() => (
-                  <SearchNumber setLoading={setLoadingChildren} />
+                  <SearchNumber setLoading={setLoadingChildren} setText={setText}/>
                 )}
               />
               <Route exact path="/results/team" component={ResultsTeam} />
@@ -74,7 +75,7 @@ const App: React.FC = () => {
             <Footer />
           </Router>
         </MainContainer>
-        <Loading isLoading={loadingChildren} />
+        <Loading isLoading={loadingChildren} text={loadingText} />
       </AppContainer>
     );
   }
