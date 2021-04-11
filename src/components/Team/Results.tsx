@@ -1,8 +1,6 @@
 import React from "react";
 import { Heading } from "@chakra-ui/react";
 import { Data } from "../../types/main";
-import Header from "../Header";
-import { Div } from "../StyledComponent/index";
 import Lists from "../Lists";
 
 type Props = {

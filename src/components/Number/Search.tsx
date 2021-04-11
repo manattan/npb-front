@@ -2,9 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { SimpleGrid, Box, Heading } from "@chakra-ui/react";
 import SearchButton from "../Button";
-import Header from "../Header";
 import { getListsByNum } from "../../API/main";
-import { Div } from "../StyledComponent/index";
 
 interface Props {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;

@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { SimpleGrid, Box } from "@chakra-ui/react";
-import Header from "./Header";
 import SearchButton from "./Button";
 import SearchKeyword from "./Keyword/Search";
-import { KeywordContainer, Div } from "./StyledComponent/index";
+import { KeywordContainer } from "./StyledComponent/index";
 
 interface Props {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;

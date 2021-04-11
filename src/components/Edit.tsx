@@ -3,8 +3,6 @@ import { useHistory } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import * as types from "../types/main";
 import { userState } from "../store/main";
-import Header from "./Header";
-import { Div } from "./StyledComponent";
 import { Heading, Text, Textarea, Button } from "@chakra-ui/react";
 import styled from "styled-components";
 import { requestEdit } from "../API/main";

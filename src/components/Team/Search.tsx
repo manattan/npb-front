@@ -3,9 +3,7 @@ import { useHistory } from "react-router-dom";
 import { SimpleGrid, Box, Heading } from "@chakra-ui/react";
 import { list } from "../../lib/main";
 import { getListsByTeam } from "../../API/main";
-import Header from "../Header";
 import SearchButton from "../Button";
-import { Div } from "../StyledComponent/index";
 
 interface Props {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;

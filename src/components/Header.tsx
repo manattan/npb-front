@@ -51,6 +51,17 @@ const Header: React.FC<Props> = (props:Props) => {
       return;
     }
   };
+
+
+  const logout = async () => {
+    firebase.auth().signOut().then(() => {
+      history.push({ pathname: "/" });
+      window.location.reload()
+    }).catch(e => {
+      console.error(e)
+    })
+  }
+
   return (
     <HeaderContainer isLoading={props.isLoading}>
       <LeftContainer>
@@ -69,7 +80,7 @@ const Header: React.FC<Props> = (props:Props) => {
                 <MenuList>
                   <MenuItem>マイページ</MenuItem>
                   <MenuDivider />
-                  <MenuItem>ログアウト</MenuItem>
+                  <MenuItem onClick={logout} >ログアウト</MenuItem>
                 </MenuList>
               </Menu>
             </RightObj>
@@ -82,7 +93,7 @@ const Header: React.FC<Props> = (props:Props) => {
         )}
         {!user && (
           <RightObj>
-            <Button onClick={login}>ログイン</Button>
+            <Button style={{marginTop: '10px'}} onClick={login}>ログインして編集をリクエスト！</Button>
           </RightObj>
         )}
       </RightContainer>

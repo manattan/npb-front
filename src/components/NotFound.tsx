@@ -1,7 +1,5 @@
 import React from "react";
-import Header from "./Header";
 import { Heading, Text } from "@chakra-ui/react";
-import { Div } from "./StyledComponent";
 
 const NotFound: React.FC = () => {
   return (

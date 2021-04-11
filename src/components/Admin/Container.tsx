@@ -4,7 +4,6 @@ import ListElement from "./List";
 import { getRequest } from "../../API/main";
 import { RequestState } from "../../store/main";
 import { Table, Tbody, Thead, Tr, Td, Heading } from "@chakra-ui/react";
-import styled from "styled-components";
 
 const AdminContainer: React.FC = () => {
   const [request, setRequest] = useRecoilState(RequestState);
