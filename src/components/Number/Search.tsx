@@ -8,21 +8,21 @@ import { Div } from "../StyledComponent/index";
 
 interface Props {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  setText: React.Dispatch<React.SetStateAction<undefined | string>>
+  setText: React.Dispatch<React.SetStateAction<undefined | string>>;
 }
 
 const SearchNumber: React.FC<Props> = (props: Props) => {
   const history = useHistory();
 
   const fetch = async (i: number) => {
-    props.setText(`背番号: ${i}`)
+    props.setText(`背番号: ${i}`);
     props.setLoading(true);
     const results = await getListsByNum(i);
     history.push({
       pathname: "/results/number",
       state: { results, number: i },
     });
-    props.setText(undefined)
+    props.setText(undefined);
     props.setLoading(false);
   };
 

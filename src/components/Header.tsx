@@ -1,6 +1,13 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Heading, Text, GridItem, Grid, Button, IconButton } from "@chakra-ui/react";
+import {
+  Heading,
+  Text,
+  GridItem,
+  Grid,
+  Button,
+  IconButton,
+} from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrUser } from "react-icons/gr";
 import { useRecoilState } from "recoil";
@@ -8,7 +15,14 @@ import firebase from "../lib/firebase";
 import { registerUser } from "../API/main";
 import { User } from "../types/main";
 import { userState } from "../store/main";
-import { HeaderContainer, LeftContainer,LeftObj, RightContainer, RightObj, HamburgerContainer } from './StyledComponent/header'
+import {
+  HeaderContainer,
+  LeftContainer,
+  LeftObj,
+  RightContainer,
+  RightObj,
+  HamburgerContainer,
+} from "./StyledComponent/header";
 
 const Header: React.FC = () => {
   const history = useHistory();
@@ -32,32 +46,27 @@ const Header: React.FC = () => {
       return;
     }
   };
-
-  if (window.location.pathname === '/admin') {
-    return <div />
-  }
-
   return (
     <HeaderContainer>
       <LeftContainer>
         <LeftObj>
-          <Link to='/'>
+          <Link to="/">
             <h1>Search-NPB</h1>
           </Link>
         </LeftObj>
       </LeftContainer>
       <RightContainer>
         {user && (
-            <>
+          <>
+            <RightObj>
+              <IconButton aria-label="user" icon={<GrUser />} />
+            </RightObj>
+            {user.name === "茂木貴紀 elms" && (
               <RightObj>
-                <IconButton aria-label='user' icon={<GrUser />}/>
+                <Button onClick={() => history.push("/admin")}>管理画面</Button>
               </RightObj>
-              {user.name === "茂木貴紀 elms" && (
-                <RightObj>
-                  <Button onClick={() => history.push("/admin")}>管理画面</Button>
-                </RightObj>
-              )}
-            </>
+            )}
+          </>
         )}
         {!user && (
           <RightObj>
@@ -66,7 +75,7 @@ const Header: React.FC = () => {
         )}
       </RightContainer>
       <HamburgerContainer>
-        <IconButton aria-label='menu' icon={<GiHamburgerMenu />}/>
+        <IconButton aria-label="menu" icon={<GiHamburgerMenu />} />
       </HamburgerContainer>
     </HeaderContainer>
   );

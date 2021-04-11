@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { sp, pc } from './meta'
+import { sp, pc } from "./meta";
 
 export const AppContainer = styled.div`
   position: relative;
@@ -40,10 +40,10 @@ export const LoadingContainer = styled.div`
   left: calc(50% - 50px);
 `;
 
-export const LoadingText = styled.div<{length: number}>`
+export const LoadingText = styled.div<{ length: number }>`
   position: fixed;
-  width: ${props => props.length}rem;
+  width: ${(props) => props.length}rem;
   top: 50vh;
-  left: calc(50% - ${props => props.length ? props.length/2 : 0}rem);
+  left: calc(50% - ${(props) => (props.length ? props.length / 2 : 0)}rem);
   text-align: center;
-`
+`;
