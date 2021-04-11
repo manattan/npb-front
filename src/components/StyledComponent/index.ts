@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { sp, pc } from "./meta";
 
 export const AppContainer = styled.div`
   position: relative;
