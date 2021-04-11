@@ -15,6 +15,7 @@ import { userState } from "./store/main";
 import firebase from "./lib/firebase";
 import Loading from "./components/Loading";
 import { AppContainer, MainContainer } from "./components/StyledComponent";
+import Header from "./components/Header";
 
 const App: React.FC = () => {
   const [user, setUser] = useRecoilState(userState);
@@ -45,8 +46,9 @@ const App: React.FC = () => {
   } else {
     return (
       <AppContainer>
-        <MainContainer isLoading={loadingChildren}>
-          <Router>
+        <Router>
+          <Header />
+          <MainContainer isLoading={loadingChildren}>
             <Switch>
               <Route
                 exact
@@ -73,8 +75,8 @@ const App: React.FC = () => {
               <Route component={NotFound} />
             </Switch>
             <Footer />
-          </Router>
-        </MainContainer>
+          </MainContainer>
+        </Router>
         <Loading isLoading={loadingChildren} text={loadingText} />
       </AppContainer>
     );

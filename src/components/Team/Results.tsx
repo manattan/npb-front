@@ -19,8 +19,6 @@ type Props = {
 const ResultsTeam: React.FC<Props> = (props: Props) => {
   return (
     <>
-      <Header />
-      <Div />
       <div style={{ margin: "40px auto", textAlign: "center" }}>
         <Heading size="md">検索結果: {props.location.state.name}</Heading>
       </div>

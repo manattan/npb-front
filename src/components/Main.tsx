@@ -14,8 +14,6 @@ interface Props {
 const Main: React.FC<Props> = (props: Props) => {
   return (
     <>
-      <Header />
-      <Div />
       <SimpleGrid columns={2} spacing={0}>
         <Link to="/search/team">
           <Box style={{ textAlign: "center" }}>

@@ -40,8 +40,6 @@ const SearchTeam: React.FC<Props> = (props: Props) => {
 
   return (
     <>
-      <Header />
-      <Div />
       <div style={{ margin: "40px auto", textAlign: "center" }}>
         <Heading size="md">チーム名から検索する</Heading>
       </div>
