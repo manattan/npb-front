@@ -56,8 +56,6 @@ const Edit: React.FC<Props> = (props: Props) => {
 
   return (
     <>
-      <Header />
-      <Div />
       <section>
         <Heading
           style={{

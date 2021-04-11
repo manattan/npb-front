@@ -6,8 +6,6 @@ import { Div } from "./StyledComponent";
 const NotFound: React.FC = () => {
   return (
     <div>
-      <Header />
-      <Div />
       <span style={{ textAlign: "center" }}>
         <Heading>404 not Found</Heading>
         <Text>このURLは存在しません！</Text>

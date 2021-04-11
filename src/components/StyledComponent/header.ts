@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { sp, pc } from "./meta";
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div<{ isLoading: boolean }>`
+  filter: ${(props) => (props.isLoading ? "blur(3px)" : 0)};
   height: 60px;
   width: 100vw;
   background-color: #ffbb33;

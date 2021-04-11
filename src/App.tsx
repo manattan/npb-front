@@ -47,8 +47,8 @@ const App: React.FC = () => {
     return (
       <AppContainer>
         <Router>
-          <Header />
-          <MainContainer isLoading={loadingChildren}>
+          <Header isLoading={loadingChildren}/>
+            <MainContainer isLoading={loadingChildren}>
             <Switch>
               <Route
                 exact

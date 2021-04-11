@@ -7,7 +7,7 @@ export const AppContainer = styled.div`
 
 export const MainContainer = styled.div<{ isLoading: boolean }>`
   filter: ${(props) => (props.isLoading ? "blur(3px)" : 0)};
-  padding: 60px 30px 30px;
+  padding: 30px;
   min-height: calc(100vh - 60px);
   position: relative;
 `;

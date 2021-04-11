@@ -25,7 +25,11 @@ import {
   HamburgerContainer,
 } from "./StyledComponent/header";
 
-const Header: React.FC = () => {
+interface Props {
+  isLoading: boolean
+}
+
+const Header: React.FC<Props> = (props:Props) => {
   const history = useHistory();
   const [user, setUser] = useRecoilState(userState);
 
@@ -48,7 +52,7 @@ const Header: React.FC = () => {
     }
   };
   return (
-    <HeaderContainer>
+    <HeaderContainer isLoading={props.isLoading}>
       <LeftContainer>
         <LeftObj>
           <Link to="/">
