@@ -1,12 +1,13 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import {
-  Heading,
-  Text,
-  GridItem,
-  Grid,
+  Menu,
   Button,
   IconButton,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuDivider,
 } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrUser } from "react-icons/gr";
@@ -59,11 +60,18 @@ const Header: React.FC = () => {
         {user && (
           <>
             <RightObj>
-              <IconButton aria-label="user" icon={<GrUser />} />
+              <Menu>
+                <MenuButton style={{marginTop: '10px'}} as={Button} rightIcon={<GrUser />}>{user.name}</MenuButton>
+                <MenuList>
+                  <MenuItem>マイページ</MenuItem>
+                  <MenuDivider />
+                  <MenuItem>ログアウト</MenuItem>
+                </MenuList>
+              </Menu>
             </RightObj>
             {user.name === "茂木貴紀 elms" && (
               <RightObj>
-                <Button onClick={() => history.push("/admin")}>管理画面</Button>
+                <Button style={{marginTop: '10px'}} onClick={() => history.push("/admin")}>管理画面</Button>
               </RightObj>
             )}
           </>

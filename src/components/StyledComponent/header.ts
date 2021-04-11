@@ -37,11 +37,9 @@ export const RightContainer = styled.div`
 
 export const RightObj = styled.div`
   display: flex;
+  margin: 0 10px;
   p {
     margin: 18px;
-  }
-  button {
-    margin: 10px 10px 0;
   }
 `;
 
