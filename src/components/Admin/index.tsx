@@ -35,7 +35,7 @@ const Admin: React.FC = () => {
         style={{
           textAlign: "center",
           width: "50%",
-          margin: "40px auto",
+          margin: "auto",
         }}
       >
         <Heading>Search-NPB 管理画面</Heading>

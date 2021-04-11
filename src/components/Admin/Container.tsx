@@ -6,11 +6,6 @@ import { RequestState } from "../../store/main";
 import { Table, Tbody, Thead, Tr, Td, Heading } from "@chakra-ui/react";
 import styled from "styled-components";
 
-const Div = styled.div`
-  padding: 10px;
-  max-width: 100%;
-`;
-
 const AdminContainer: React.FC = () => {
   const [request, setRequest] = useRecoilState(RequestState);
   const [loading, setLoading] = useState(true);
@@ -45,7 +40,7 @@ const AdminContainer: React.FC = () => {
   }
 
   return (
-    <Div>
+    <>
       <Heading>管理画面</Heading>
       <Table variant="striped" colorScheme="twitter">
         <Thead>
@@ -58,7 +53,7 @@ const AdminContainer: React.FC = () => {
         </Thead>
         <Tbody>{list}</Tbody>
       </Table>
-    </Div>
+    </>
   );
 };
 
