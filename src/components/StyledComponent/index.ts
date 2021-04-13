@@ -66,3 +66,11 @@ export const LoadingText = styled.div<{ length: number }>`
   left: calc(50% - ${(props) => (props.length ? props.length / 2 : 0)}rem);
   text-align: center;
 `;
+
+export const FooterContainer = styled.div`
+  text-align: center;
+  width: calc(100% - 60px);
+  margin: 30px auto 10px;
+  position: absolute;
+  bottom: 0px;
+`
