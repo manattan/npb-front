@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const AppContainer = styled.div`
   position: relative;
+  background-color: #fffaf0;
 `;
 
 export const MainContainer = styled.div<{ isLoading: boolean }>`
@@ -10,6 +11,25 @@ export const MainContainer = styled.div<{ isLoading: boolean }>`
   min-height: calc(100vh - 60px);
   position: relative;
 `;
+
+export const TopContainer = styled.div`
+  
+`
+
+export const DescriptionContainer = styled.div`
+  width: 80%;
+  text-align: center;
+  padding: 50px 10px;
+  font-weight: bold;
+  border: 10px solid #ff9966;
+  background-color: rgba(255,153,102, 0.15);
+  border-radius: 30px;
+  margin: 0 auto;
+`
+
+export const SearchContainer = styled.div`
+  padding: 30px 0;
+`
 
 export const KeywordContainer = styled.div`
   width: 50%;
