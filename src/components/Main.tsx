@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import { SimpleGrid, Box } from "@chakra-ui/react";
 import SearchButton from "./Button";
 import SearchKeyword from "./Keyword/Search";
-import { KeywordContainer, TopContainer, DescriptionContainer, SearchContainer } from "./StyledComponent/index";
+import {
+  KeywordContainer,
+  TopContainer,
+  DescriptionContainer,
+  SearchContainer,
+} from "./StyledComponent/index";
 
 interface Props {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,13 +16,14 @@ interface Props {
 }
 
 const Main: React.FC<Props> = (props: Props) => {
-  return(
+  return (
     <TopContainer>
       <DescriptionContainer>
         <p>
           ここでは、全球団の背番号の歴史を調べることができます。
           <br />
-          また、Google でログインすることで、編集をリクエストすることが可能になります！  
+          また、Google
+          でログインすることで、編集をリクエストすることが可能になります！
         </p>
       </DescriptionContainer>
       <SearchContainer>
@@ -38,7 +44,7 @@ const Main: React.FC<Props> = (props: Props) => {
         <SearchKeyword setLoading={props.setLoading} setText={props.setText} />
       </KeywordContainer>
     </TopContainer>
-  )
+  );
 };
 
 export default Main;

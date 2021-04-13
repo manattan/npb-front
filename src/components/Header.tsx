@@ -26,10 +26,10 @@ import {
 } from "./StyledComponent/header";
 
 interface Props {
-  isLoading: boolean
+  isLoading: boolean;
 }
 
-const Header: React.FC<Props> = (props:Props) => {
+const Header: React.FC<Props> = (props: Props) => {
   const history = useHistory();
   const [user, setUser] = useRecoilState(userState);
 
@@ -52,15 +52,18 @@ const Header: React.FC<Props> = (props:Props) => {
     }
   };
 
-
   const logout = async () => {
-    firebase.auth().signOut().then(() => {
-      history.push({ pathname: "/" });
-      window.location.reload()
-    }).catch(e => {
-      console.error(e)
-    })
-  }
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        history.push({ pathname: "/" });
+        window.location.reload();
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  };
 
   return (
     <HeaderContainer isLoading={props.isLoading}>
@@ -76,24 +79,37 @@ const Header: React.FC<Props> = (props:Props) => {
           <>
             <RightObj>
               <Menu>
-                <MenuButton style={{marginTop: '10px'}} as={Button} rightIcon={<GrUser />}>{user.name}</MenuButton>
+                <MenuButton
+                  style={{ marginTop: "10px" }}
+                  as={Button}
+                  rightIcon={<GrUser />}
+                >
+                  {user.name}
+                </MenuButton>
                 <MenuList>
                   <MenuItem>マイページ</MenuItem>
                   <MenuDivider />
-                  <MenuItem onClick={logout} >ログアウト</MenuItem>
+                  <MenuItem onClick={logout}>ログアウト</MenuItem>
                 </MenuList>
               </Menu>
             </RightObj>
             {user.name === "茂木貴紀 elms" && (
               <RightObj>
-                <Button style={{marginTop: '10px'}} onClick={() => history.push("/admin")}>管理画面</Button>
+                <Button
+                  style={{ marginTop: "10px" }}
+                  onClick={() => history.push("/admin")}
+                >
+                  管理画面
+                </Button>
               </RightObj>
             )}
           </>
         )}
         {!user && (
           <RightObj>
-            <Button style={{marginTop: '10px'}} onClick={login}>ログインして編集をリクエスト！</Button>
+            <Button style={{ marginTop: "10px" }} onClick={login}>
+              ログインして編集をリクエスト！
+            </Button>
           </RightObj>
         )}
       </RightContainer>

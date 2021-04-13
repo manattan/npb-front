@@ -12,9 +12,7 @@ export const MainContainer = styled.div<{ isLoading: boolean }>`
   position: relative;
 `;
 
-export const TopContainer = styled.div`
-  
-`
+export const TopContainer = styled.div``;
 
 export const DescriptionContainer = styled.div`
   width: 80%;
@@ -22,14 +20,14 @@ export const DescriptionContainer = styled.div`
   padding: 50px 10px;
   font-weight: bold;
   border: 10px solid #ff9966;
-  background-color: rgba(255,153,102, 0.15);
+  background-color: rgba(255, 153, 102, 0.15);
   border-radius: 30px;
   margin: 0 auto;
-`
+`;
 
 export const SearchContainer = styled.div`
   padding: 30px 0;
-`
+`;
 
 export const KeywordContainer = styled.div`
   width: 50%;
@@ -73,4 +71,4 @@ export const FooterContainer = styled.div`
   margin: 30px auto 10px;
   position: absolute;
   bottom: 0px;
-`
+`;

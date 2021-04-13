@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from "@chakra-ui/react";
-import {FooterContainer} from './StyledComponent/index'
+import { FooterContainer } from "./StyledComponent/index";
 
 const Footer: React.FC = () => {
   return (
