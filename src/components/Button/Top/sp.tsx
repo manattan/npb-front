@@ -1,7 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { pc } from '../../StyledComponent/meta';
-
+import React from "react";
+import styled from "styled-components";
+import { pc } from "../../StyledComponent/meta";
 
 const TopButtonContainer = styled.div`
   width: 90%;
@@ -16,20 +15,20 @@ const TopButtonContainer = styled.div`
   ${pc`
     display: none;
   `}
-`
+`;
 
 interface Props {
-  label: string
+  label: string;
 }
 
-const TopButtonSP:React.FC<Props> = (props:Props) => {
+const TopButtonSP: React.FC<Props> = (props: Props) => {
   return (
     <TopButtonContainer>
-      <span style={{fontSize: '30px'}}>{props.label}</span>
+      <span style={{ fontSize: "30px" }}>{props.label}</span>
       <br />
       <span>から検索する</span>
     </TopButtonContainer>
-  )
-}
+  );
+};
 
-export default TopButtonSP
+export default TopButtonSP;

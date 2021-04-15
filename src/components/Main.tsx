@@ -31,20 +31,20 @@ const Main: React.FC<Props> = (props: Props) => {
         <SimpleGrid columns={2} spacing={0}>
           <Link to="/search/team">
             <Box>
-              <TopButtonPC label='チーム名' />
+              <TopButtonPC label="チーム名" />
             </Box>
           </Link>
           <Link to="/search/number">
             <Box>
-              <TopButtonPC label='背番号' />
+              <TopButtonPC label="背番号" />
             </Box>
           </Link>
         </SimpleGrid>
         <Link to="/search/team">
-          <TopButtonSP label='チーム名'/>
+          <TopButtonSP label="チーム名" />
         </Link>
         <Link to="/searchnumber">
-          <TopButtonSP label='背番号'/>
+          <TopButtonSP label="背番号" />
         </Link>
       </SearchContainer>
       <KeywordContainer>
