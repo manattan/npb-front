@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { SimpleGrid, Box } from "@chakra-ui/react";
-import SearchButton from "./Button";
 import SearchKeyword from "./Keyword/Search";
 import {
   KeywordContainer,

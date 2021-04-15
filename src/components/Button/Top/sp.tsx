@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { sp, pc } from '../../StyledComponent/meta';
+import { pc } from '../../StyledComponent/meta';
 
 
 const TopButtonContainer = styled.div`
