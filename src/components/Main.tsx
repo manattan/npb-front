@@ -9,6 +9,8 @@ import {
   DescriptionContainer,
   SearchContainer,
 } from "./StyledComponent/index";
+import TopButtonPC from "./Button/Top/pc";
+import TopButtonSP from "./Button/Top/sp";
 
 interface Props {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -29,16 +31,22 @@ const Main: React.FC<Props> = (props: Props) => {
       <SearchContainer>
         <SimpleGrid columns={2} spacing={0}>
           <Link to="/search/team">
-            <Box style={{ textAlign: "center" }}>
-              <SearchButton label="チーム名から検索する" />
+            <Box>
+              <TopButtonPC label='チーム名' />
             </Box>
           </Link>
           <Link to="/search/number">
-            <Box style={{ textAlign: "center" }}>
-              <SearchButton label="背番号から検索する" />
+            <Box>
+              <TopButtonPC label='背番号' />
             </Box>
           </Link>
         </SimpleGrid>
+        <Link to="/search/team">
+          <TopButtonSP label='チーム名'/>
+        </Link>
+        <Link to="/searchnumber">
+          <TopButtonSP label='背番号'/>
+        </Link>
       </SearchContainer>
       <KeywordContainer>
         <SearchKeyword setLoading={props.setLoading} setText={props.setText} />

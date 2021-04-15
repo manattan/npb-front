@@ -27,6 +27,7 @@ export const DescriptionContainer = styled.div`
 
 export const SearchContainer = styled.div`
   padding: 30px 0;
+  text-align: center;
 `;
 
 export const KeywordContainer = styled.div`
