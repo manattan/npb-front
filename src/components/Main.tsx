@@ -43,7 +43,7 @@ const Main: React.FC<Props> = (props: Props) => {
         <Link to="/search/team">
           <TopButtonSP label="チーム名" />
         </Link>
-        <Link to="/searchnumber">
+        <Link to="/search/number">
           <TopButtonSP label="背番号" />
         </Link>
       </SearchContainer>
