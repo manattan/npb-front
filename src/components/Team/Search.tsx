@@ -1,9 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { SimpleGrid, Box, Heading } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import { list } from "../../lib/main";
 import { getListsByTeam } from "../../API/main";
-import SearchButton from "../Button";
+import SearchButton from "../Button/Team/main";
 
 interface Props {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,7 +11,8 @@ interface Props {
 }
 
 const SearchTeam: React.FC<Props> = (props: Props) => {
-  const renderList: JSX.Element[] = [];
+  const pacificList: JSX.Element[] = [];
+  const centralList: JSX.Element[] = [];
   const history = useHistory();
 
   const fetch = async (i: number) => {
@@ -26,14 +27,18 @@ const SearchTeam: React.FC<Props> = (props: Props) => {
   };
 
   for (let i = 0; i < list.length; i++) {
-    renderList.push(
-      <Box style={{ textAlign: "center" }} key={i}>
-        <SearchButton
-          label={list[i].name}
-          function={async () => await fetch(i)}
-        />
-      </Box>
-    );
+    const element:JSX.Element = (
+      <SearchButton
+        label={list[i].name}
+        function={async () => await fetch(i)}
+      />
+    ) 
+
+    if (list[i].league === 'パ・リーグ') {
+      pacificList.push(element)
+    } else {
+      centralList.push(element)
+    }
   }
 
   return (
@@ -41,9 +46,8 @@ const SearchTeam: React.FC<Props> = (props: Props) => {
       <div style={{ margin: "40px auto", textAlign: "center" }}>
         <Heading size="md">チーム名から検索する</Heading>
       </div>
-      <SimpleGrid columns={2} spacing={6}>
-        {renderList}
-      </SimpleGrid>
+      <LeagueContainer league='パ・リーグ' list={pacificList} />
+      <LeagueContainer league='セ・リーグ' list={centralList} />
     </>
   );
 };

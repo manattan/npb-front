@@ -29,3 +29,5 @@ export interface RequestDetail {
   new: string;
   merged: boolean;
 }
+
+export type league = 'パ・リーグ' | 'セ・リーグ'
